@@ -1,0 +1,222 @@
+:root{
+    --dark-gray: gray;
+    --tomato: tomato;
+    --red: red;
+    --white: white;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+.nav-container{
+    width: 100%;
+    background-color: var(--dark-gray);
+}
+.navbar{
+    display: grid;
+    grid-template-columns: 0.2fr auto 1fr;
+    align-items: center;
+    height: 80px;
+    width: 90%;
+    max-width: 1700px;
+   
+}
+#navbar-logo{
+    color: var(--red);
+    justify-self: start;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.nav-menu{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    list-style: none;
+    text-align: center;
+    width: 70%;
+    justify-self: end;
+}
+.nav-link{
+    color: white;
+    text-decoration: none;
+}
+.nav-link:hover{
+    color: var(--white);
+    border: 1px solid var(--red);
+    transition: all 0.6s linear;
+}
+.nav-link-btn{
+    background-color: var(--red);
+    padding: 3px 10px;
+    border: 4px;
+    color: white;
+    border: 1px solid ;
+
+}
+.nav-link-btn:hover{
+    color: var(--red);
+    transition: all 0.3s linear;
+    color: white;
+    transition: all 0.6s linear;
+}
+.menu-toggle .bar{
+    width: 30px;
+    height: 5px;
+    margin: 5px auto;
+    transition: all 0.3s linear;
+    background-color: var(--white);
+}
+
+.card-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 20px auto;
+}
+.card{
+    width: 40%;
+    height: 40%;
+}
+.card img{
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+}
+.card1{
+    width: 40%;
+    height: 40%;
+}
+.card1 img{
+    width: 100%;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: block;
+}
+.card1 span {
+    font-family: sans-serif;
+}
+.card1 p{
+    display: inline-blck;
+}
+.card-hold{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 20px auto;
+}
+.card-contain{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 20px auto;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-container{
+        position: relative;
+    }
+    .nav-menu{
+        display: grid;
+        grid-template-columns: auto;
+        background-color: var(--red);
+        position: absolute;
+        margin: 0;
+        width: 100%;
+        top: 80px;
+        left: -100%;
+        transition: all 0.5s ease;
+    }
+    #navbar-logo{
+        margin-left: 20px;
+    }
+    .nav-menu.active{
+        background-color: var(--tomato);
+        opacity: 1;
+        left: 0;
+        transition: all 0.5s ease;
+        
+    }
+    .nav-link{
+        text-align: center;
+        line-height: 60px;
+        display: table;
+        width: 100%;
+    }
+    .nav-link:hover{
+        background-color: var(--red);
+        color: var(white);
+        transition: all 0.4s linear;
+    }
+    .navbar{
+        width:100%;
+    }
+    .nav-link-btn{
+        border: none;
+        padding: 0;
+        border-radius: 0;
+        background-color: var(--dark-gray);
+        color: white;
+        transition: all 0.6s ease-out;
+    }
+
+    .nav-link-btn:hover{
+        border: none;
+        padding: 0;
+        border-radius: 0;
+        background-color: var(--dark-gray);
+        color: white;
+        transition: all 0.6s ease-out;
+    }
+
+    #mobile-toggle{
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+    .menu-toggle .bar{
+        display: block;
+        cursor: pointer;
+    }
+    .menu-toggle:hover{
+        cursor: pointer;
+    }
+    .menu-toggle.is-active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .menu-toggle.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
+@media screen and (min-width: 768px){
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+    }
+}
+@media screen and (min-width: 992px){
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
